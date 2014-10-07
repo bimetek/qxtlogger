@@ -1,0 +1,12 @@
+#ifndef QXTLOGGER_GLOBAL_H
+#define QXTLOGGER_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(QXTLOGGER_LIBRARY)
+#  define QXTLOGGERSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define QXTLOGGERSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // QXTLOGGER_GLOBAL_H
