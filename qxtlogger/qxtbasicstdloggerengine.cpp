@@ -40,7 +40,7 @@ public:
         Q_ASSERT(stream);
 
         QString timestamp = QTime::currentTime().toString("hh:mm:ss.zzz");
-        QString header = QString("[%1] [%2]").arg(timestamp, level);
+        QString header = QString("[%1] [%2] ").arg(timestamp, level);
         QString padding = QString("").leftJustified(header.size(), ' ');
 
         *stream << header;

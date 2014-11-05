@@ -55,7 +55,7 @@ void BasicFileLoggerEngine::writeToFile(
     QIODevice *file = device();
     QTextStream stream(file);
 
-    QString header = QString("[%1] [%2]").arg(
+    QString header = QString("[%1] [%2] ").arg(
                 QDateTime::currentDateTime().toString(d->dateFormat), level);
     QString padding = QString("").leftJustified(header.size(), ' ');
 
