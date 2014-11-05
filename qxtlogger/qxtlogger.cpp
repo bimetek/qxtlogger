@@ -90,10 +90,9 @@ QString Logger::logLevelToString(Logger::LogLevel level)
 
 Logger::LogLevel Logger::stringToLogLevel(const QString &level)
 {
-    bool ok = false;
     const char *key = level.toUtf8().constData();
-    int lvl = staticMetaObject.enumerator(0).keyToValue(key, &ok);
-    return ok ? static_cast<LogLevel>(lvl) : NoLevels;
+    int lvl = staticMetaObject.enumerator(0).keyToValue(key);
+    return lvl >= 0 ? static_cast<LogLevel>(lvl) : NoLevels;
 }
 
 Logger *Logger::getInstance()
