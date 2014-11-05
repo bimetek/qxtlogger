@@ -487,11 +487,12 @@ void Logger::log(
     log(level, args);
 }
 
-void Logger::log(Logger::LogLevel level, const QList<QVariant> &args)
+void Logger::log(Logger::LogLevel level, const QVariantList &args)
 {
     Q_D(Logger);
     QMetaObject::invokeMethod(
-                d, "log", Qt::AutoConnection, Q_ARG(LogLevel, level),
+                d, "log", Qt::AutoConnection,
+                Q_ARG(Qxt::Logger::LogLevel, level),
                 Q_ARG(QVariantList, args));
 }
 

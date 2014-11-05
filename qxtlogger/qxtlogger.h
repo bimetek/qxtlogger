@@ -173,7 +173,7 @@ public Q_SLOTS:
         log(WriteLevel, message, m1, m2, m3, m4, m5, m6, m7, m8, m9);
     }
 
-    void log(LogLevel level, const QList<QVariant>& args);
+    void log(LogLevel level, const QVariantList &args);
     inline void info(const QVariantList &args)     { log(InfoLevel, args);     }
     inline void trace(const QVariantList &args)    { log(TraceLevel, args);    }
     inline void warning(const QVariantList &args)  { log(WarningLevel, args);  }

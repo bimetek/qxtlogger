@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include "qxtlogger.h"
+#include "qxtloggerengine.h"
 class QMutex;
 
 namespace Qxt
@@ -10,6 +11,7 @@ namespace Qxt
 
 class QXTLOGGERSHARED_EXPORT LoggerPrivate : public QObject
 {
+    Q_OBJECT
     Q_DECLARE_PUBLIC(Logger)
     Logger * const q_ptr;
 
@@ -27,7 +29,7 @@ public:
     QMutex *lock;
     QHash<QString, LoggerEngine *> logEngineMap;
 
-    Q_INVOKABLE void log(Logger::LogLevel level, const QVariantList &args);
+    Q_INVOKABLE void log(Qxt::Logger::LogLevel level, const QVariantList &args);
 };
 
 }   // namespace Qxt
