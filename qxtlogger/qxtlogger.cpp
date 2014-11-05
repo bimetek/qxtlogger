@@ -1,4 +1,5 @@
 #include "qxtlogger.h"
+#include <cstdlib>
 #include <QMetaEnum>
 #include <QMutexLocker>
 #include <QStringList>
@@ -36,7 +37,7 @@ void LoggerMessageHandler(
         break;
     case QtFatalMsg:
         Logger::getInstance()->fatal(msg, "qfatal");
-        abort();
+        ::abort();
         break;
     }
 }
