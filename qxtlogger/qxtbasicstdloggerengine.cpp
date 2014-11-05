@@ -16,13 +16,8 @@ class BasicSTDLoggerEnginePrivate
 
 public:
     BasicSTDLoggerEnginePrivate(BasicSTDLoggerEngine *q) :
-        q_ptr(q)
+        q_ptr(q), out(new QTextStream(stdout)), err(new QTextStream(stderr))
     {
-        out->flush();
-        out = new QTextStream(stdout);
-
-        err->flush();
-        err = new QTextStream(stderr);
     }
 
     ~BasicSTDLoggerEnginePrivate()
